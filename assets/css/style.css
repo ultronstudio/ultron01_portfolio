@@ -1,0 +1,6 @@
+.animace-sprite { background-size: auto 100% }
+.animace-sprite:hover { -webkit-animation-play-state: paused; animation-play-state: paused !important }
+.animace-sprite, .animace-sprite img { display: inline-block; vertical-align: bottom }
+.animace-sprite img { opacity: 0 }
+@keyframes sprite { 0% { background-position: 0 0 } 100% { background-position: 100% 100% } }
+@-webkit-keyframes sprite { 0% { background-position: 0 0 } 100% { background-position: 100% 100% } }

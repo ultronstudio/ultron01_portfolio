@@ -37,30 +37,49 @@ $about = array(
  */
 $projects = array(
     'title' => 'Meine Projekte',
-    'pnum' => 2,
+    'pnum' => 3,
     'info1' => '(Ich habe insgesamt <span id="odometer" class="odometer">0</span> Projekt abgeschlossen)',
     'info24' => '(Ich habe insgesamt <span id="odometer" class="odometer">0</span> Projekte abgeschlossen)',
     'info05' => '(Ich habe insgesamt <span id="odometer" class="odometer">0</span> Projekte abgeschlossen)',
-    'stratycz' => $straty = array(
-        'title' => 'Straty.cz',
-        'description' => 'Portfolio für den Tschechischen YouTuber und Twitch-Streamer <b>Straty</b>',
-        'used' => '<li>Bootstrap</li><li>HTML5</li><li>CSS3</li><li>FontAwesome</li>',
-        'status' => '<b class="text-danger">WIRD NICHT MEHR VERWENDET</b>'
-    ),
-    'czechplayeu' => $czechplayeu = array(
-        'title' => 'Czech-Play.eu',
-        'description' => 'Community-Website für den Tschechischen Minecraft-Server <b>Czech-Play.eu</b>',
-        'used' => '<li>Bootstrap</li><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>PHP</li><li>MySQL</li>',
-        'status' => '<b class="text-danger">NICHT MEHR IN BETRIEB</b>'
-    ),
-    'hophub' => $hophub = array(
-        'title' => 'HopHub',
-        'description' => 'Eine Browsererweiterung, die Ihre GitHub-Seite so gestalten kann, dass sie wie Ihre Lieblingsseite für Erwachsene aussieht.',
-        'used' => '<li>CSS3</li><li>JavaScript</li><li>JSON</li>',
-        'status' => '<b class="text-success">DOWNLOAD VERFÜGBAR</b>&nbsp;<small>(<a href="https://github.com/ultronstudio/HopHub" target="_blank">hier</a>)</small>'
-    ),
-    'used' => 'Verwendete Technologien:',
-    'status' => 'Zustand:',
+    'project_title' => 'Titel',
+    'project_short_description' => 'Kurze Beschreibung',
+    'project_published' => 'Veröffentlicht auf',
+    'project_last_update' => 'Letztes Update',
+    'project_preview' => 'Vorschau',
+    'project_used_technologies' => 'Verwendete Technologien',
+    'project_status' => 'Status',
+    'projects' => array(
+        array(
+            'title' => 'Straty.cz',
+            'description_short' => 'Portfolio',
+            'description_long' => 'Portfolio für den tschechischen YouTuber und Twitch-Streamer <b>Straty</b>',
+            'used' => 'Bootstrap, HTML5, CSS3, FontAwesome',
+            'status' => '<b class="text-danger">NICHT BENUTZT</b>',
+            'published_in' => 'Unbekannt',
+            'last_update' => 'Nicht aktualisiert',
+            'preview' => 'assets/img/projects/straty-cz.jpg'
+        ),
+        array(
+            'title' => 'Czech-Play.eu',
+            'description_short' => 'Community-Website',
+            'description_long' => 'Community-Website für den tschechischen Minecraft-Server <b>Czech-Play.eu</b>',
+            'used' => 'Bootstrap, HTML5, CSS3, JavaScript, PHP, MySQL',
+            'status' => '<b class="text-danger">EXISTIERT NICHT MEHR</b>',
+            'published_in' => 'Unbekannt',
+            'last_update' => 'Nicht aktualisiert',
+            'preview' => 'assets/img/projects/placeholder_de.png'
+        ),
+        array(
+            'title' => 'HopHub',
+            'description_short' => 'Browsererweiterung',
+            'description_long' => 'Eine Browsererweiterung, die Ihre GitHub-Seite so gestalten kann, dass sie wie Ihre Lieblingsseite für Erwachsene aussieht',
+            'used' => 'HTML5, CSS3, JavaScript, JSON',
+            'status' => '<b class="text-success">HERUNTERLADBAR</b>&nbsp;<small>(<a href="https://github.com/ultronstudio/HopHub" target="_blank">hier</a>)</small>',
+            'published_in' => '7.3.2023',
+            'last_update' => '9.3.2023',
+            'preview' => 'assets/img/projects/hophub.png'
+        )
+    )
 );
 
 /**

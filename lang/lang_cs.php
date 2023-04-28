@@ -11,6 +11,22 @@ $document = array(
 );
 
 /**
+ * Údaje pro navigaci
+ */
+$navbar = array(
+    'home' => 'Domů',
+    'projects' => 'Projekty'
+);
+
+/**
+ * Údaje pro stránku chyby 404 (nenalezeno)
+ */
+$notfound = array(
+    'title' => "Chyba<br>404",
+    'description' => 'Stránka, kterou hledáte, mohla být odstraněna, přesunuta, nebo je dočasně nedostupná. <a href="' . CreateLink($document['code'], "home") . '">Zpět na domovskou stránku</a>'
+);
+
+/**
  * Údaje pro "hlavičku"
  */
 $header = array(
@@ -37,30 +53,49 @@ $about = array(
  */
 $projects = array(
     'title' => 'Moje projekty',
-    'pnum' => 2,
+    'pnum' => 3,
     'info1' => '(celkem jsem dokončil <span id="odometer" class="odometer">0</span> projekt)',
     'info24' => '(celkem jsem dokončil <span id="odometer" class="odometer">0</span> projekty)',
     'info05' => '(celkem jsem dokončil <span id="odometer" class="odometer">0</span> projektů)',
-    'stratycz' => $straty = array(
-        'title' => 'Straty.cz',
-        'description' => 'Portfolio pro českého YouTubera a Twitch streamera <b>Stratyho</b>',
-        'used' => '<li>Bootstrap</li><li>HTML5</li><li>CSS3</li><li>FontAwesome</li>',
-        'status' => '<b class="text-danger">JIŽ NEPOUŽÍVÁNO</b>'
-    ),
-    'czechplayeu' => $czechplayeu = array(
-        'title' => 'Czech-Play.eu',
-        'description' => 'Komunitní web pro český Minecraft server <b>Czech-Play.eu</b>',
-        'used' => '<li>Bootstrap</li><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>PHP</li><li>MySQL</li>',
-        'status' => '<b class="text-danger">JIŽ NEEXISTUJE</b>'
-    ),
-    'hophub' => $hophub = array(
-        'title' => 'HopHub',
-        'description' => 'Rozšíření pro prohlížeč, které dokáže upravit styl stránky GitHub tak, aby vypadala jako váš oblíbený web pro dospělé.',
-        'used' => '<li>CSS3</li><li>JavaScript</li><li>JSON</li>',
-        'status' => '<b class="text-success">KE STAŽENÍ</b>&nbsp;<small>(<a href="https://github.com/ultronstudio/HopHub" target="_blank">zde</a>)</small>'
-    ),
-    'used' => 'Použité technologie:',
-    'status' => 'Stav:',
+    'project_title' => 'Název',
+    'project_short_description' => 'Krátký popis',
+    'project_published' => 'Publikováno',
+    'project_last_update' => 'Poslední aktualizace',
+    'project_preview' => 'Náhled',
+    'project_used_technologies' => 'Použité technologie',
+    'project_status' => 'Stav',
+    'projects' => array(
+        array(
+            'title' => 'Straty.cz',
+            'description_short' => 'Portfolio',
+            'description_long' => 'Portfolio pro českého YouTubera a Twitch streamera <b>Stratyho</b>',
+            'used' => 'Bootstrap, HTML5, CSS3, FontAwesome',
+            'status' => '<b class="text-danger">JIŽ NEPOUŽÍVÁNO</b>',
+            'published_in' => 'Neznámo kdy',
+            'last_update' => 'Neaktualizováno',
+            'preview' => 'assets/img/projects/straty-cz.jpg'
+        ),
+        array(
+            'title' => 'Czech-Play.eu',
+            'description_short' => 'Komunitní web',
+            'description_long' => 'Komunitní web pro český Minecraft server <b>Czech-Play.eu</b>',
+            'used' => 'Bootstrap, HTML5, CSS3, JavaScript, PHP, MySQL',
+            'status' => '<b class="text-danger">JIŽ NEEXISTUJE</b>',
+            'published_in' => 'Neznámo kdy',
+            'last_update' => 'Neaktualizováno',
+            'preview' => 'assets/img/projects/placeholder_cs.png'
+        ),
+        array(
+            'title' => 'HopHub',
+            'description_short' => 'Rozšíření pro prohlížeč',
+            'description_long' => 'Rozšíření pro prohlížeč, které dokáže upravit styl stránky GitHub tak, aby vypadala jako váš oblíbený web pro dospělé',
+            'used' => 'HTML5, CSS3, JavaScript, JSON',
+            'status' => '<b class="text-success">KE STAŽENÍ</b>&nbsp;<small>(<a href="https://github.com/ultronstudio/HopHub" target="_blank">zde</a>)</small>',
+            'published_in' => '7.3.2023',
+            'last_update' => '9.3.2023',
+            'preview' => 'assets/img/projects/hophub.png'
+        )
+    )
 );
 
 /**

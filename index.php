@@ -1,5 +1,6 @@
 <?php
-define('BASE_URL', 'https://ultron01.ultronarmy.eu');
+require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/config/functions.php';
 
 if (isset($_GET['lang']) && !empty($_GET['lang'])) {
     if (file_exists('lang/lang_' . $_GET['lang'] . '.php')) {
@@ -45,8 +46,10 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
     <link rel="alternate" hreflang="en" href="<?= BASE_URL ?>/?lang=pl">
     <link rel="alternate" hreflang="en" href="<?= BASE_URL ?>/?lang=sk">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= BASE_URL; ?>/assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="<?= BASE_URL; ?>/assets/css/odometer-theme-default.css?t=<?= filemtime(__DIR__ . '/assets/css/odometer-theme-default.css'); ?>" rel="stylesheet">
+    <link href="<?= BASE_URL; ?>/assets/css/style.css?t=<?= filemtime(__DIR__ . '/assets/css/style.css'); ?>" rel="stylesheet">
     <link href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
+    <link href="<?= BASE_URL; ?>/assets/css/magnific-popup.css?t=<?= filemtime(__DIR__ . '/assets/css/magnific-popup.css'); ?>" rel="stylesheet">
     <style>
         @font-face {
             font-family: "Matrix Code NFI";
@@ -56,7 +59,7 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
 </head>
 
 <body>
-    <main role="main" class="container">
+    <main role="main" class="container pt-4">
         <div class="my-5 mb-0">
             <div class="row">
                 <div class="col">
@@ -154,7 +157,7 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
             </div>
         </div>
         <hr>
-        <div class="mb-5">
+        <div class="mb-3">
             <h3><?= $projects['title']; ?>&nbsp;<small><?php switch ($projects['pnum']) {
                                                             case 1:
                                                                 echo $projects['info1'];
@@ -167,70 +170,30 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
                                                             default:
                                                                 echo $projects['info05'];
                                                                 break;
-                                                        }; ?></small></h3>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="card h-100">
-                        <img src="<?= BASE_URL; ?>/assets/img/projects/straty-cz.jpg" alt="<?= $projects['stratycz']['title']; ?>" class="card-img-top">
-                        <div class="card-body">
-                            <h6><?= $projects['stratycz']['title']; ?></h6>
-                            <div class="card-text">
-                                <p><?= $projects['stratycz']['description']; ?></p>
-                                <hr>
-                                <div class="container">
-                                    <b><?= $projects['used']; ?></b><br>
-                                    <ul>
-                                        <?= $projects['stratycz']['used']; ?>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <?= $projects['status']; ?>&nbsp;<?= $projects['stratycz']['status']; ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card h-100">
-                        <img src="<?= BASE_URL; ?>/assets/img/projects/placeholder.jpg" alt="<?= $projects['czechplayeu']['title']; ?>" class="card-img-top">
-                        <div class="card-body">
-                            <h6><?= $projects['czechplayeu']['title']; ?></h6>
-                            <div class="card-text">
-                                <p><?= $projects['czechplayeu']['description']; ?></p>
-                                <hr>
-                                <div class="container">
-                                    <b><?= $projects['used']; ?></b><br>
-                                    <ul>
-                                        <?= $projects['czechplayeu']['used']; ?>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <?= $projects['status']; ?>&nbsp;<?= $projects['czechplayeu']['status']; ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card h-100">
-                        <img src="<?= BASE_URL; ?>/assets/img/projects/hophub.png" alt="<?= $projects['hophub']['title']; ?>" class="card-img-top">
-                        <div class="card-body">
-                            <h6><?= $projects['hophub']['title']; ?></h6>
-                            <div class="card-text">
-                                <p><?= $projects['hophub']['description']; ?></p>
-                                <hr>
-                                <div class="container">
-                                    <b><?= $projects['used']; ?></b><br>
-                                    <ul>
-                                        <?= $projects['hophub']['used']; ?>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <?= $projects['status']; ?>&nbsp;<?= $projects['hophub']['status']; ?>
-                        </div>
-                    </div>
+                                                        }; ?></small>
+            </h3>
+            <div class="mt-3 mb-3">
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col"><?= $projects['project_title']; ?><br><span style="font-weight: normal;"><?= $projects['project_short_description']; ?></span></th>
+                                <th scope="col"><?= $projects['project_published'] ?><br><span style="font-weight: normal;" class="text-success"><?= $projects['project_last_update'] ?></span></th>
+                                <th scope="col"><?= $projects['project_preview']; ?><br><span style="font-weight: normal;"><?= $projects['project_used_technologies']; ?></span></th>
+                                <th scope="col"><?= $projects['project_status']; ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($projects['projects'] as $project) : ?>
+                                <tr>
+                                    <td><b><?= $project['title']; ?></b><br><span style="font-weight: normal;" title="<?= $project['description_long']; ?>"><?= $project['description_short']; ?></span></td>
+                                    <td><?= $project['published_in']; ?><br><span style="font-weight: normal;" class="text-success"><?= $project['last_update']; ?></span></td>
+                                    <td><a href="<?= BASE_URL; ?>/<?= $project['preview']; ?>" class="mopup" data-title="<?= $projects['project_preview']; ?>"><?= $projects['project_preview']; ?></a><br><?= $project['used']; ?></td>
+                                    <td><?= $project['status']; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -241,30 +204,39 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
                 <p><?= $contact['description']; ?></p>
             </div>
         </div>
-        <hr>
-        <footer class="text-center">
-            <div class="container pt-4">
-                <section class="mb-4">
-                    <a class="btn btn-link btn-floating btn-lg m-1" href="https://facebook.com/vurmpetr" role="button" target="_blank"><i class="fa-brands fa-facebook" style="background: -webkit-linear-gradient(#17A9FD, #0165E1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i></a>
-                    <a class="btn btn-link btn-floating btn-lg m-1" href="https://www.instagram.com/ultronek" role="button" target="_blank"><i class="fa-brands fa-instagram" style="background: -webkit-linear-gradient(#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i></a>
-                    <a class="btn btn-link btn-floating btn-lg m-1" href="https://www.linkedin.com/in/petr-vurm-574980203" role="button" target="_blank"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></a>
-                    <a class="btn btn-link btn-floating btn-lg m-1" href="https://github.com/ultronstudio" role="button" target="_blank"><i class="fa-brands fa-github" style="color: #000000;"></i></a>
-                    <a class="btn btn-link btn-floating btn-lg m-1" href="https://www.youtube.com/channel/UCD_3lwYUvAeeqR0zURQNdzA" role="button" target="_blank"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i></a>
-                    <a class="btn btn-link btn-floating btn-lg m-1" href="https://discord.gg/k46F443VZJ" role="button" target="_blank"><i class="fa-brands fa-discord" style="color: #5865F2;"></i></a>
-                    <a class="btn btn-link btn-floating btn-lg m-1" href="mailto:p.vurm@outlook.cz" role="button"><i class="fa-solid fa-at" style="background: -webkit-linear-gradient(#FF7700, #FF8A00, #FF9E00, #FFB100, #FFC500, #FFD800); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i></a>
-                </section>
-            </div>
-            <div class="text-center p-3 bg-dark text-white">
-                &copy;&nbsp;<?= (date('Y') >= 2024) ? '2023 - ' . date('Y') : date('Y'); ?>&nbsp;<b><?= $header['name']; ?></b><br>
-            </div>
-        </footer>
     </main>
+    <footer class="text-center" style="border-top: 1px solid #000000;">
+        <div class="container pt-2">
+            <section class="mb-2">
+                <a class="btn btn-link btn-floating btn-lg m-1" href="https://facebook.com/vurmpetr" role="button" target="_blank"><i class="fa-brands fa-facebook" style="background: -webkit-linear-gradient(#17A9FD, #0165E1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i></a>
+                <a class="btn btn-link btn-floating btn-lg m-1" href="https://www.instagram.com/ultronek" role="button" target="_blank"><i class="fa-brands fa-instagram" style="background: -webkit-linear-gradient(#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i></a>
+                <a class="btn btn-link btn-floating btn-lg m-1" href="https://www.linkedin.com/in/petr-vurm-574980203" role="button" target="_blank"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></a>
+                <a class="btn btn-link btn-floating btn-lg m-1" href="https://github.com/ultronstudio" role="button" target="_blank"><i class="fa-brands fa-github" style="color: #000000;"></i></a>
+                <a class="btn btn-link btn-floating btn-lg m-1" href="https://www.youtube.com/channel/UCD_3lwYUvAeeqR0zURQNdzA" role="button" target="_blank"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i></a>
+                <a class="btn btn-link btn-floating btn-lg m-1" href="https://discord.gg/k46F443VZJ" role="button" target="_blank"><i class="fa-brands fa-discord" style="color: #5865F2;"></i></a>
+                <a class="btn btn-link btn-floating btn-lg m-1" href="mailto:p.vurm@outlook.cz" role="button"><i class="fa-solid fa-at" style="background: -webkit-linear-gradient(#FF7700, #FF8A00, #FF9E00, #FFB100, #FFC500, #FFD800); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i></a>
+            </section>
+        </div>
+        <div class="text-center p-3 bg-dark text-white">
+            &copy;&nbsp;<?= (date('Y') >= 2024) ? '2023 - ' . date('Y') : date('Y'); ?>&nbsp;<b><?= $header['name']; ?></b><br>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/egg.js/1.0/egg.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="<?= BASE_URL; ?>/assets/js/odometer.js" crossorigin="anonymous"></script>
-    <script src="<?= BASE_URL; ?>/assets/js/ajax.js" crossorigin="anonymous"></script>
+    <script src="<?= BASE_URL; ?>/assets/js/odometer.js?t=<?= filemtime(__DIR__ . '/assets/js/odometer.js'); ?>"></script>
+    <script src="<?= BASE_URL; ?>/assets/js/jquery.magnific-popup.js?t=<?= filemtime(__DIR__ . '/assets/js/jquery.magnific-popup.js'); ?>"></script>
     <script>
+        $('.mopup').magnificPopup({
+            gallery: {
+                enabled: false
+            },
+            type: 'image',
+            image: {
+                titleSrc: 'data-title'
+            }
+        });
+
         $(document).ready(function() {
             console.log("%c<?= $console['stop']; ?>", "color:#00b7ef; font-size:60px; font-weight: bold; -webkit-text-stroke: 1px black;");
             console.log("%c<?= $console['only_dev_func']; ?>", "font-size: 18px;");
@@ -307,7 +279,6 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
                 drops[i]++;
             }
         }
-
         setInterval(draw, 35);
     </script>
 </body>

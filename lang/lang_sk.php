@@ -37,7 +37,7 @@ $about = array(
  */
 $projects = array(
     'title' => 'Moje projekty',
-    'pnum' => 2,
+    'pnum' => 3,
     'info1' => '(celkom som dokončil <span id="odometer" class="odometer">0</span> projekt)',
     'info24' => '(celkom som dokončil <span id="odometer" class="odometer">0</span> projekty)',
     'info05' => '(celkom som dokončil <span id="odometer" class="odometer">0</span> projektov)',
