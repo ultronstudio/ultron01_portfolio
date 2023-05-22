@@ -50,6 +50,7 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
     <link href="<?= BASE_URL; ?>/assets/css/style.css?t=<?= filemtime(__DIR__ . '/assets/css/style.css'); ?>" rel="stylesheet">
     <link href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
     <link href="<?= BASE_URL; ?>/assets/css/magnific-popup.css?t=<?= filemtime(__DIR__ . '/assets/css/magnific-popup.css'); ?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
     <style>
         @font-face {
             font-family: "Matrix Code NFI";
@@ -206,8 +207,8 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
         </div>
     </main>
     <footer class="text-center" style="border-top: 1px solid #000000;">
-        <div class="container pt-2">
-            <section class="mb-2">
+        <div class="mb-2 pt-2">
+            <section class="">
                 <a class="btn btn-link btn-floating btn-lg m-1" href="https://facebook.com/vurmpetr" role="button" target="_blank"><i class="fa-brands fa-facebook" style="background: -webkit-linear-gradient(#17A9FD, #0165E1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i></a>
                 <a class="btn btn-link btn-floating btn-lg m-1" href="https://www.instagram.com/ultronek" role="button" target="_blank"><i class="fa-brands fa-instagram" style="background: -webkit-linear-gradient(#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i></a>
                 <a class="btn btn-link btn-floating btn-lg m-1" href="https://www.linkedin.com/in/petr-vurm-574980203" role="button" target="_blank"><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i></a>
@@ -216,6 +217,38 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
                 <a class="btn btn-link btn-floating btn-lg m-1" href="https://discord.gg/k46F443VZJ" role="button" target="_blank"><i class="fa-brands fa-discord" style="color: #5865F2;"></i></a>
                 <a class="btn btn-link btn-floating btn-lg m-1" href="mailto:p.vurm@outlook.cz" role="button"><i class="fa-solid fa-at" style="background: -webkit-linear-gradient(#FF7700, #FF8A00, #FF9E00, #FFB100, #FFC500, #FFD800); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i></a>
             </section>
+            <div class="dropdown">
+                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="<?= BASE_URL; ?>/assets/img/flags/<?= $document['code']; ?>.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;<?= $document['lang_name']; ?>
+                </button>
+                <ul class="dropdown-menu">
+                    <?php if ($document['code'] != 'cs'): ?>
+                        <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=cs">
+                                <img src="<?= BASE_URL; ?>/assets/img/flags/cs.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Česky
+                            </a></li>
+                    <?php endif; ?>
+                    <?php if ($document['code'] != 'de'): ?>
+                        <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=de">
+                                <img src="<?= BASE_URL; ?>/assets/img/flags/de.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Deutsch
+                            </a></li>
+                    <?php endif; ?>
+                    <?php if ($document['code'] != 'en'): ?>
+                        <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=en">
+                                <img src="<?= BASE_URL; ?>/assets/img/flags/en.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;English
+                            </a></li>
+                    <?php endif; ?>
+                    <?php if ($document['code'] != 'pl'): ?>
+                        <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=pl">
+                                <img src="<?= BASE_URL; ?>/assets/img/flags/pl.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Polski
+                            </a></li>
+                    <?php endif; ?>
+                    <?php if ($document['code'] != 'sk'): ?>
+                        <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=sk">
+                                <img src="<?= BASE_URL; ?>/assets/img/flags/sk.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Slovensky
+                            </a></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
         </div>
         <div class="text-center p-3 bg-dark text-white">
             &copy;&nbsp;<?= (date('Y') >= 2024) ? '2023 - ' . date('Y') : date('Y'); ?>&nbsp;<b><?= $header['name']; ?></b><br>

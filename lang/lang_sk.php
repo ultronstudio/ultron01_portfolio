@@ -4,6 +4,7 @@
  */
 $document = array(
     'code' => 'sk',
+    'lang_name' => 'Slovensky',
     'title' => 'Petr Vurm - autor statických webov a webových aplikácií',
     'meta-author' => 'Petr Vurm',
     'meta-desc' => "Webové portfólio Petra Vurma",
@@ -41,26 +42,45 @@ $projects = array(
     'info1' => '(celkom som dokončil <span id="odometer" class="odometer">0</span> projekt)',
     'info24' => '(celkom som dokončil <span id="odometer" class="odometer">0</span> projekty)',
     'info05' => '(celkom som dokončil <span id="odometer" class="odometer">0</span> projektov)',
-    'stratycz' => $straty = array(
-        'title' => 'Straty.cz',
-        'description' => 'Portfólio pre českého YouTubera a Twitch streamera <b>Stratyho</b>',
-        'used' => '<li>Bootstrap</li><li>HTML5</li><li>CSS3</li><li>FontAwesome</li>',
-        'status' => '<b class="text-danger">UŽ NEPOUŽÍVANÉ</b>'
-    ),
-    'czechplayeu' => $czechplayeu = array(
-        'title' => 'Czech-Play.eu',
-        'description' => 'Komunitný web pre český Minecraft server <b>Slovak-Play.eu</b>',
-        'used' => '<li>Bootstrap</li><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>PHP</li><li>MySQL</li>',
-        'status' => '<b class="text-danger">UŽ NEEXISTUJE</b>'
-    ),
-    'hophub' => $hophub = array(
-        'title' => 'HopHub',
-        'description' => 'Rozšírenie pre prehliadač, ktoré dokáže upraviť štýl stránky GitHub tak, aby vyzerala ako váš obľúbený web pre dospelých.',
-        'used' => '<li>CSS3</li><li>JavaScript</li><li>JSON</li>',
-        'status' => '<b class="text-success">NA STIAHNUTIE</b>&nbsp;<small>(<a href="https://github.com/ultronstudio/HopHub" target="_blank">tu</a>)</small>'
-    ),
-    'used' => 'Použité technológie:',
-    'status' => 'Stav:',
+    'project_title' => 'Názov',
+    'project_short_description' => 'Krátky popis',
+    'project_published' => 'Publikované',
+    'project_last_update' => 'Posledná aktualizácia',
+    'project_preview' => 'Náhľad',
+    'project_used_technologies' => 'Použité technológie',
+    'project_status' => 'Stav',
+    'projects' => array(
+        array(
+            'title' => 'Straty.cz',
+            'description_short' => 'Portfólio',
+            'description_long' => 'Portfólio pre českého YouTubera a Twitch streamera <b>Stratyho</b>',
+            'used' => 'Bootstrap, HTML5, CSS3, FontAwesome',
+            'status' => '<b class="text-danger">UŽ NEPOUŽÍVANÉ</b>',
+            'published_in' => 'Nevedno kedy',
+            'last_update' => 'Neaktualizované',
+            'preview' => 'assets/img/projects/straty-cz.jpg'
+        ),
+        array(
+            'title' => 'Czech-Play.eu',
+            'description_short' => 'Komunitný web',
+            'description_long' => 'Komunitný web pre český Minecraft server <b>Slovak-Play.eu</b>',
+            'used' => 'Bootstrap, HTML5, CSS3, JavaScript, PHP, MySQL',
+            'status' => '<b class="text-danger">UŽ NEEXISTUJE</b>',
+            'published_in' => 'Nevedno kedy',
+            'last_update' => 'Neaktualizované',
+            'preview' => 'assets/img/projects/placeholder_sk.png'
+        ),
+        array(
+            'title' => 'HopHub',
+            'description_short' => 'Rozšírenie pre prehliadač',
+            'description_long' => 'Rozšírenie pre prehliadač, ktoré dokáže upraviť štýl stránky GitHub tak, aby vyzerala ako váš obľúbený web pre dospelých',
+            'used' => 'HTML5, CSS3, JavaScript, JSON',
+            'status' => '<b class="text-success">NA STIAHNUTIE</b>&nbsp;<small>(<a href="https://github.com/ultronstudio/HopHub" target="_blank">tu</a>)</small>',
+            'published_in' => '7.3.2023',
+            'last_update' => '6.4.2023',
+            'preview' => 'assets/img/projects/hophub.png'
+        )
+    )
 );
 
 /**

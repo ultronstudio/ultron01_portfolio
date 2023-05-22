@@ -4,6 +4,7 @@
  */
 $document = array(
     'code' => 'en',
+    'lang_name' => 'English',
     'title' => 'Petr Vurm - static websites & web applications developer',
     'meta-author' => 'Petr Vurm',
     'meta-desc' => "Petr Vurm's web portfolio",
@@ -76,7 +77,7 @@ $projects = array(
             'used' => 'HTML5, CSS3, JavaScript, JSON',
             'status' => '<b class="text-success">DOWNLOADABLE</b>&nbsp;<small>(<a href="https://github.com/ultronstudio/HopHub" target="_blank">here</a>)</small>',
             'published_in' => '7.3.2023',
-            'last_update' => '9.3.2023',
+            'last_update' => '6.4.2023',
             'preview' => 'assets/img/projects/hophub.png'
         )
     )
