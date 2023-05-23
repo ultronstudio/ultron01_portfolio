@@ -57,6 +57,18 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
             src: url('<?= BASE_URL; ?>/assets/fonts/matrix_code_nfi.woff');
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEJB4TT4KZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NEJB4TT4KZ');
+    </script>
 </head>
 
 <body>
@@ -222,27 +234,37 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
                     <img src="<?= BASE_URL; ?>/assets/img/flags/<?= $document['code']; ?>.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;<?= $document['lang_name']; ?>
                 </button>
                 <ul class="dropdown-menu">
-                    <?php if ($document['code'] != 'cs'): ?>
+                    <?php if ($document['code'] != 'cs') : ?>
                         <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=cs">
                                 <img src="<?= BASE_URL; ?>/assets/img/flags/cs.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Česky
                             </a></li>
                     <?php endif; ?>
-                    <?php if ($document['code'] != 'de'): ?>
+                    <?php if ($document['code'] != 'de') : ?>
                         <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=de">
                                 <img src="<?= BASE_URL; ?>/assets/img/flags/de.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Deutsch
                             </a></li>
                     <?php endif; ?>
-                    <?php if ($document['code'] != 'en'): ?>
+                    <?php if ($document['code'] != 'en') : ?>
                         <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=en">
                                 <img src="<?= BASE_URL; ?>/assets/img/flags/en.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;English
                             </a></li>
                     <?php endif; ?>
-                    <?php if ($document['code'] != 'pl'): ?>
+                    <?php if ($document['code'] != 'es') : ?>
+                        <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=es">
+                                <img src="<?= BASE_URL; ?>/assets/img/flags/es.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Español
+                            </a></li>
+                    <?php endif; ?>
+                    <?php if ($document['code'] != 'fr') : ?>
+                        <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=fr">
+                                <img src="<?= BASE_URL; ?>/assets/img/flags/fr.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Français
+                            </a></li>
+                    <?php endif; ?>
+                    <?php if ($document['code'] != 'pl') : ?>
                         <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=pl">
                                 <img src="<?= BASE_URL; ?>/assets/img/flags/pl.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Polski
                             </a></li>
                     <?php endif; ?>
-                    <?php if ($document['code'] != 'sk'): ?>
+                    <?php if ($document['code'] != 'sk') : ?>
                         <li><a class="dropdown-item" href="<?= BASE_URL; ?>/?lang=sk">
                                 <img src="<?= BASE_URL; ?>/assets/img/flags/sk.svg" style="border-radius: 5px; width: auto; height: 15px; margin-top: -3px"></span>&nbsp;Slovensky
                             </a></li>
