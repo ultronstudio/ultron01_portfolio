@@ -1,0 +1,62 @@
+Let's make a game!
+  name:Idle Ultron
+  author:ultron01
+  desc:Idle game by ultron01
+  created:16/06/2023
+  updated:16/06/2023
+  version:1.0.0
+
+Settings
+  background:https://ultron01.ultronarmy.eu/idle_ultron/assets/img/black.jpg
+  building cost increase:115%
+  building cost refund:50%
+  spritesheet:icons, 48 by 48, https://ultron01.ultronarmy.eu/idle_ultron/assets/img/icons.png
+
+Layout
+  use default
+
+Resources
+  *ultron01
+    name:Ultron01
+    desc:Power of God
+    icon:icons[0,0]
+    class:noBackground
+    show earned
+
+Buttons
+  *ultron01Button
+    name:Make ultron01 famous
+    desc:Click this to make ultron01 famous.
+    icon:https://ultron01.ultronarmy.eu/idle_ultron/assets/img/ultron01_big.png
+    on click:anim icon wobble
+    on click:yield 1 ultron01
+    no text
+    class:bigButton hasFlares
+    tooltip origin:bottom
+		tooltip class:red
+
+Buildings
+  *advert
+    name:Advertisement
+    desc:Create advertisement for ultron01<//><b>Effect:</b><.>Produces 1 ultron01 every 10 seconds.
+    text:You made [?(this=0)|0 advertisement|[this] advertisements].
+    icon:icons[0,0]
+    cost:15 ultron01
+    on tick:yield 0.1 ultron01
+    tooltip origin:left
+    unlocked
+
+Upgrades
+  *golden
+    name:Golden Ultron01
+    desc:Unlocks the ultron's golden power!<//><b>Effect:</b><.>+1 ultron01/click
+    passive:multiply yield of ultron01 by 2
+    icon:icons[0,1]
+    cost:50 ultron01
+
+CSS
+  #game
+  {
+    font-family:Arial;
+    color:white;
+  }
