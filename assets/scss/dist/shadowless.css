@@ -1,0 +1,148 @@
+@font-face {
+  font-family: CreakSans;
+  src: url("../../fonts/Creaks-Sans.woff");
+}
+* {
+  color: white;
+}
+
+main {
+  animation: zoomIn;
+  animation-duration: 2s;
+}
+
+footer {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  background: #000;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+}
+footer::before {
+  background: linear-gradient(rgba(0, 0, 0, 0) 0, #000 100%);
+  position: absolute;
+  left: 0;
+  top: -100px;
+  width: 100%;
+  height: 100px;
+  content: " ";
+}
+footer > .social-icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+footer > .social-icons > .social-link {
+  margin-right: 10px;
+}
+footer > .social-icons > .social-link:last-child {
+  margin-right: 0px;
+}
+footer > .social-icons > .social-link > .social-icon {
+  fill: #FFF;
+  width: auto;
+  max-height: 30px;
+  height: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: CreakSans;
+}
+
+.logo {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.btn {
+  cursor: pointer;
+  --bs-btn-font-size: 17px;
+  --bs-btn-font-weight: 600;
+  --bs-btn-font-family: CreakSans;
+  --bs-btn-color: white;
+  --bs-btn-bg: transparent;
+  opacity: 1;
+  --bs-btn-padding-x: 35px;
+  --bs-btn-padding-y: 28px;
+  --bs-border-radius: 0px;
+  text-align: center;
+  letter-spacing: 2px;
+  -webkit-mask-image: url(../../img/shadowless/mask_btn.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left;
+  -webkit-mask-size: 100% 100%;
+  mask-image: url(../../img/shadowless/mask_btn.svg);
+  mask-repeat: no-repeat;
+  mask-position: left;
+  mask-size: 100% 100%;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-outline::before {
+  content: " ";
+  background: white;
+  -webkit-mask-image: url(../../img/shadowless/mask_btn_border.png);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left;
+  -webkit-mask-size: 100% 100%;
+  mask-image: url(../../img/shadowless/mask_btn_border.png);
+  mask-repeat: no-repeat;
+  mask-position: left;
+  mask-size: 100% 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.col-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: CreakSans;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+.col-content {
+  font-family: CreakSans;
+  font-size: 16px;
+}
+
+.row-section {
+  border-bottom: 2px solid rgba(44, 43, 42, 0.9);
+  flex: none;
+}
+.row-section:last-of-type {
+  border-bottom: none;
+}
+
+.rating-pegi-row {
+  display: flex;
+  flex-direction: row;
+}
+.rating-pegi-row > .rating-pegi-link {
+  margin-right: 10px;
+}
+.rating-pegi-row > .rating-pegi-link:last-child {
+  margin-right: 0px;
+}
+.rating-pegi-row .rating-pegi-image {
+  width: auto;
+  height: 75px;
+}/*# sourceMappingURL=shadowless.css.map */

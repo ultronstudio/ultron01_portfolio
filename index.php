@@ -43,8 +43,8 @@ if (isset($_GET['lang']) && !empty($_GET['lang'])) {
     <link rel="alternate" hreflang="cs" href="<?= BASE_URL ?>/?lang=cs">
     <link rel="alternate" hreflang="de" href="<?= BASE_URL ?>/?lang=de">
     <link rel="alternate" hreflang="en" href="<?= BASE_URL ?>/?lang=en">
-    <link rel="alternate" hreflang="en" href="<?= BASE_URL ?>/?lang=pl">
-    <link rel="alternate" hreflang="en" href="<?= BASE_URL ?>/?lang=sk">
+    <link rel="alternate" hreflang="pl" href="<?= BASE_URL ?>/?lang=pl">
+    <link rel="alternate" hreflang="sk" href="<?= BASE_URL ?>/?lang=sk">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= BASE_URL; ?>/assets/css/odometer-theme-default.css?t=<?= filemtime(__DIR__ . '/assets/css/odometer-theme-default.css'); ?>" rel="stylesheet">
     <link href="<?= BASE_URL; ?>/assets/css/style.css?t=<?= filemtime(__DIR__ . '/assets/css/style.css'); ?>" rel="stylesheet">

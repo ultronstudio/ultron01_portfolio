@@ -79,6 +79,16 @@ $projects = array(
             'published_in' => '7.3.2023',
             'last_update' => '6.4.2023',
             'preview' => 'assets/img/projects/hophub.png'
+        ),
+        array(
+            'title' => 'Shadowless',
+            'description_short' => 'Video game',
+            'description_long' => 'Psychological horror game',
+            'used' => 'Unity',
+            'status' => '<b class="text-warning">IN DEVELOPMENT</b>&nbsp;<small>(<a href="https://ultron01.ultronarmy.eu/shadowless" target="_blank">website</a>)</small>',
+            'published_in' => '11.3.2023',
+            'last_update' => '<i>Non-public data</i>',
+            'preview' => 'assets/img/shadowless/thumbnail.png'
         )
     )
 );
